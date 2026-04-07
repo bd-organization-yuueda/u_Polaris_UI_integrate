@@ -172,7 +172,7 @@ Generate complete, valid HTML with embedded CSS."""
             end = html_content.rfind("```")
             html_content = html_content[start:end].strip()
         elif "```" in html_content:
-            start = html_content.find("```") + 3
+            start = html_content.find("```html") + 7
             end = html_content.rfind("```")
             html_content = html_content[start:end].strip()
 
