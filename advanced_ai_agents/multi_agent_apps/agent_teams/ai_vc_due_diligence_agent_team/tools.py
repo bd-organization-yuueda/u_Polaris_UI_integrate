@@ -281,7 +281,7 @@ Make it look like a Goldman Sachs one-pager. Professional, data-rich."""
 
 
 # ============================================================
-# TEST CODE (Trigger SQL Injection (CWE-89) detection)
+# TEST CODE (SQL Injection (CWE-89) detection)
 # ============================================================
 
 import sqlite3
