@@ -278,29 +278,3 @@ Make it look like a Goldman Sachs one-pager. Professional, data-rich."""
     except Exception as e:
         logger.error(f"Error generating infographic: {e}")
         return {"status": "error", "message": str(e)}
-
-
-# ============================================================
-# TEST CODE (SQL Injection (CWE-89) detection)
-# ============================================================
-
-import sqlite3
-
-def get_user_by_name(user_name: str):
-
-    conn = sqlite3.connect("test.db")
-    cursor = conn.cursor()
-
-    query = f"SELECT id, name, email FROM users WHERE name = '{user_name}'"
-
-    cursor.execute(query)
-    result = cursor.fetchall()
-
-    conn.close()
-    return result
-
-
-def test_sql_injection():
-
-    attacker_input = "' OR '1'='1"
-    return get_user_by_name(attacker_input)
